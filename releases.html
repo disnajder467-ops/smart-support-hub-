@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Support Hub — Релизы</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">Smart Support Hub</div>
+      <nav class="nav">
+        <a href="index.html">📊 Панель</a>
+        <a href="deployments.html">🚀 Внедрения</a>
+        <a href="incidents.html">🧯 Инциденты</a>
+        <a href="maintenance.html">🛠 Заявки</a>
+        <a href="releases.html" class="active">📦 Релизы</a>
+      </nav>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <h1>История релизов (SemVer)</h1>
+        <div class="topbar-actions">
+          <span class="version-badge" id="currentVersionBadge">v1.2.1</span>
+          <button id="themeButton" class="btn btn-secondary">🌓 Тема</button>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="card">
+          <h2>Выпустить новую версию</h2>
+          <form id="releaseForm" class="form-grid">
+            <select id="releaseLevel">
+              <option value="patch">patch (Исправления)</option>
+              <option value="minor">minor (Новая возможность)</option>
+              <option value="major">major (Крупное обновление)</option>
+            </select>
+            <input type="text" id="nextVersionPreview" readonly>
+            <input type="text" id="releaseChanges" placeholder="Список изменений через запятую" required>
+            <button type="submit" class="btn btn-primary">Опубликовать релиз</button>
+          </form>
+        </section>
+
+        <section id="releasesList" class="releases-grid"></section>
+      </main>
+    </div>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/releases.js"></script>
+</body>
+</html>

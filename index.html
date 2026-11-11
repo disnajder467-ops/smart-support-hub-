@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Support Hub — Панель управления</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://jsdelivr.net"></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">Smart Support Hub</div>
+      <nav class="nav">
+        <a href="index.html" class="active">📊 Панель</a>
+        <a href="deployments.html">🚀 Внедрения</a>
+        <a href="incidents.html">🧯 Инциденты</a>
+        <a href="maintenance.html">🛠 Заявки</a>
+        <a href="releases.html">📦 Релизы</a>
+      </nav>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <h1>Панель мониторинга</h1>
+        <div class="topbar-actions">
+          <span class="version-badge" id="currentVersionBadge">v1.2.1</span>
+          <button id="themeButton" class="btn btn-secondary">🌓 Тема</button>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="kpi-grid">
+          <div class="card kpi-card">
+            <span class="kpi-label">Активных внедрений</span>
+            <strong class="kpi-value" id="kpiDeployments">0</strong>
+          </div>
+          <div class="card kpi-card">
+            <span class="kpi-label">Открытых инцидентов</span>
+            <strong class="kpi-value" id="kpiIncidents">0</strong>
+          </div>
+          <div class="card kpi-card">
+            <span class="kpi-label">SLA выполнен</span>
+            <strong class="kpi-value" id="kpiSla">100%</strong>
+          </div>
+          <div class="card kpi-card">
+            <span class="kpi-label">Текущая версия</span>
+            <strong class="kpi-value" id="kpiVersion">v1.2.1</strong>
+          </div>
+        </section>
+
+        <section class="charts-grid">
+          <div class="card">
+            <h2>Инциденты по приоритетам</h2>
+            <div class="chart-box">
+              <canvas id="priorityChart"></canvas>
+            </div>
+          </div>
+          <div class="card">
+            <h2>Заявки по видам сопровождения</h2>
+            <div class="chart-box">
+              <canvas id="maintenanceChart"></canvas>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Последние инциденты</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Описание</th>
+                  <th>Приоритет</th>
+                  <th>Статус</th>
+                  <th>Срок SLA</th>
+                </tr>
+              </thead>
+              <tbody id="recentIncidentsTable"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

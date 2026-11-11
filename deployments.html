@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Support Hub — Внедрения</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">Smart Support Hub</div>
+      <nav class="nav">
+        <a href="index.html">📊 Панель</a>
+        <a href="deployments.html" class="active">🚀 Внедрения</a>
+        <a href="incidents.html">🧯 Инциденты</a>
+        <a href="maintenance.html">🛠 Заявки</a>
+        <a href="releases.html">📦 Релизы</a>
+      </nav>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <h1>Внедрения у заказчиков</h1>
+        <div class="topbar-actions">
+          <span class="version-badge" id="currentVersionBadge">v1.2.1</span>
+          <button id="themeButton" class="btn btn-secondary">🌓 Тема</button>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="card">
+          <h2>Новое внедрение</h2>
+          <form id="deploymentForm" class="form-grid">
+            <input type="text" id="depClient" placeholder="Заказчик (например, Лицей №5)" required>
+            <input type="text" id="depProduct" placeholder="Продукт (например, Портал оценок)" required>
+            <input type="text" id="depOwner" placeholder="Ответственный (например, Петров В.)" required>
+            <select id="depStage">
+              <option value="planning">planning (Планирование)</option>
+              <option value="setup">setup (Настройка)</option>
+              <option value="training">training (Обучение)</option>
+              <option value="production">production (Эксплуатация)</option>
+            </select>
+            <input type="date" id="depDate" required>
+            <button type="submit" class="btn btn-primary">Добавить внедрение</button>
+          </form>
+        </section>
+
+        <section class="card">
+          <h2>Список внедрений</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Заказчик</th>
+                  <th>Продукт</th>
+                  <th>Этап</th>
+                  <th>Готовность</th>
+                  <th>Ответственный</th>
+                  <th>План. дата</th>
+                  <th>Действие</th>
+                </tr>
+              </thead>
+              <tbody id="deploymentTable"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/deployments.js"></script>
+</body>
+</html>

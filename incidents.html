@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Support Hub — Инциденты</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">Smart Support Hub</div>
+      <nav class="nav">
+        <a href="index.html">📊 Панель</a>
+        <a href="deployments.html">🚀 Внедрения</a>
+        <a href="incidents.html" class="active">🧯 Инциденты</a>
+        <a href="maintenance.html">🛠 Заявки</a>
+        <a href="releases.html">📦 Релизы</a>
+      </nav>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <h1>Регистрация инцидентов и SLA</h1>
+        <div class="topbar-actions">
+          <span class="version-badge" id="currentVersionBadge">v1.2.1</span>
+          <button id="themeButton" class="btn btn-secondary">🌓 Тема</button>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="card">
+          <h2>Зарегистрировать инцидент</h2>
+          <form id="incidentForm" class="form-grid">
+            <input type="text" id="title" placeholder="Описание проблемы">
+            <select id="priority">
+              <option value="critical">critical (4 часа)</option>
+              <option value="high">high (8 часов)</option>
+              <option value="medium" selected>medium (24 часа)</option>
+              <option value="low">low (72 часа)</option>
+            </select>
+            <button type="submit" class="btn btn-primary">Создать инцидент</button>
+          </form>
+        </section>
+
+        <section class="card">
+          <div class="section-header">
+            <h2>Список инцидентов</h2>
+            <select id="statusFilter">
+              <option value="all">Все статусы</option>
+              <option value="new">new (Новые)</option>
+              <option value="in_progress">in_progress (В работе)</option>
+              <option value="resolved">resolved (Решённые)</option>
+            </select>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Описание</th>
+                  <th>Приоритет</th>
+                  <th>Статус</th>
+                  <th>Состояние SLA</th>
+                  <th>Действия</th>
+                </tr>
+              </thead>
+              <tbody id="incidentTable"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/incidents.js"></script>
+</body>
+</html>

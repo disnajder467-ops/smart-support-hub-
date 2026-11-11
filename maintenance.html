@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Support Hub — Сопровождение</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">Smart Support Hub</div>
+      <nav class="nav">
+        <a href="index.html">📊 Панель</a>
+        <a href="deployments.html">🚀 Внедрения</a>
+        <a href="incidents.html">🧯 Инциденты</a>
+        <a href="maintenance.html" class="active">🛠 Заявки</a>
+        <a href="releases.html">📦 Релизы</a>
+      </nav>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <h1>Заявки на сопровождение</h1>
+        <div class="topbar-actions">
+          <span class="version-badge" id="currentVersionBadge">v1.2.1</span>
+          <button id="themeButton" class="btn btn-secondary">🌓 Тема</button>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="card">
+          <h2>Новая заявка на изменение</h2>
+          <form id="maintenanceForm" class="form-grid">
+            <input type="text" id="reqTitle" placeholder="Описание доработки или исправления" required>
+            <select id="reqType">
+              <option value="corrective">corrective (Корректирующее)</option>
+              <option value="adaptive">adaptive (Адаптивное)</option>
+              <option value="perfective">perfective (Совершенствующее)</option>
+              <option value="preventive">preventive (Профилактическое)</option>
+            </select>
+            <input type="text" id="reqVersion" placeholder="Целевая версия (например, v1.3.0)" value="v1.3.0" required>
+            <button type="submit" class="btn btn-primary">Создать заявку</button>
+          </form>
+        </section>
+
+        <section class="card">
+          <h2>Реестр заявок</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Описание</th>
+                  <th>Вид сопровождения</th>
+                  <th>Статус</th>
+                  <th>Целевая версия</th>
+                  <th>Действие</th>
+                </tr>
+              </thead>
+              <tbody id="maintenanceTable"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/maintenance.js"></script>
+</body>
+</html>
