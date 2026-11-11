@@ -15,4 +15,4 @@
 
 ## Куда обратиться
 При возникновении вопросов по работе платформы создайте обращение в разделе **Issues** репозитория проекта на GitHub.
-SLA: critical — 4 ч, high — 8 ч, medium — 24 ч, low — 72 ч. → коммит docs: clarify SLA deadlines in user guide (closes #2)
+Сроки SLA: critical — 4 ч, high — 8 ч, medium — 24 ч, low — 72 ч.
