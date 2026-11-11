@@ -307,3 +307,4 @@ th {
     padding: 16px;
   }
 }
+.table-wrap { -webkit-overflow-scrolling: touch; }
