@@ -9,4 +9,4 @@
 ### Добавлено
 - Базовая версия Smart Support Hub: Dashboard, Deployments, Incidents с SLA, Maintenance и Releases.
 - Поддержка тёмной и светлой темы и хранение данных в `localStorage`.
-chore: finalize release notes for v1.1.0
+- Закрыты задачи #1 и #2 по улучшению мобильной вёрстки и документации
