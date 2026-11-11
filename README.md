@@ -12,3 +12,4 @@
 
 ## Запуск
 Откройте `index.html` через VS Code Live Server или перейдите по ссылке GitHub Pages.
+Рабочая версия опубликована на GitHub Pages. → коммит docs: add GitHub Pages note to README
